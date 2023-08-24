@@ -11,6 +11,9 @@ def get_country_name(country_code):
         response.raise_for_status() # if http errors occurr 
 
         data = response.json()
+
+        time.sleep(1) # to not to harras API 
+        
         return data["name"]
 
     except requests.HTTPError as errh:
