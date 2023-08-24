@@ -5,7 +5,9 @@ def get_country_name(country_code):
     url = f"https://restcountries.com/v2/alpha/{country_code}"
 
     try:
-        response = requests.get(url)
+        response = requests.get(url=url, 
+                                headers={'Accept': 'application/json'}
+                                )
         response.raise_for_status() # if http errors occurr 
 
         data = response.json()
